@@ -4,7 +4,7 @@ var CodeBreaker = require('./main');
 var app = express();
 app.set('port', (process.env.PORT || 3000));
 
-app.get('/setsecret/:secret', function(req, res) {
+app.get('/setSecret/:secret', function(req, res) {
   number = req.params.secret;
   CodeBreaker.setSecret(number);
   res.send({
@@ -22,3 +22,5 @@ app.get('/guess/:number', function(req, res) {
 app.listen(app.get('port'), function() {
   console.log('NodeJs app listening on port', app.get('port'))
 });
+
+module.exports = app;
