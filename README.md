@@ -1,4 +1,6 @@
-# TDD_empresariales
-- Camilo Perez Velez
-- Sandra Viviana Lodoño
-- Camilo Posada Angel
+# Getting Started
+
+With npm installed, run:
+
+npm install
+node app.js
