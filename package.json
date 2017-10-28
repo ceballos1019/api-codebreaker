@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha --reporter spec test/**/*.js",
-    "coverage": "./node_modules/nyc/bin/nyc.js report --reporter=text-lcov > coverage.lcov && codecov"
+    "coverage": "./node_modules/nyc/bin/nyc.js report --reporter=text-lcov > coverage.lcov && codecov",
+    "codacy-coverage": "./node_modules/nyc/bin/nyc.js report --reporter=lcov --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage  && rm -rf ./coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.1.2",
+    "codacy-coverage": "^2.0.3",
     "codecov": "^2.3.1",
     "express": "^4.15.4",
     "mocha": "^4.0.1",
